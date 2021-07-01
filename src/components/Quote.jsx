@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/Quote.scss";
 import "animate.css";
 
 function Quote({ quote, getQuote, loading }) {
+	let [audioPlay, setAudioPlay] = useState(false);
+
+	function toggleMusic() {
+		let audio = document.getElementsByTagName("audio")[0];
+		audio.paused ? audio.play() : audio.pause();
+		setAudioPlay(!audioPlay);
+	}
+
 	return (
 		<div id='zen' className='container mx-auto px-4 subpixel-antialiased'>
 			<div className='flex justify-center'>
-				<div id='quote-box' className='p-6 bg-yellow-100 rounded-lg'>
+				<div id='quote-box' className='p-6 bg-gray-100 rounded-lg'>
 					{loading ? (
 						<h2 className='animate__animated animate__flash animate__slow animate__infinite'>Loading</h2>
 					) : (
@@ -24,6 +32,14 @@ function Quote({ quote, getQuote, loading }) {
 											<i className='fab fa-twitter'></i>
 										</a>
 									</button>
+								</div>
+								<div>
+									<button onClick={toggleMusic} className='bg-blue-400 px-3 py-2 rounded-md text-white'>
+										{audioPlay ? <i className='fas fa-lg fa-pause' /> : <i className='fas fa-lg fa-play' />}
+									</button>
+									<audio loop>
+										<source src='https://storage.googleapis.com/wordcy_quote-authors/music/zen.mp3' type='audio/mpeg' />
+									</audio>
 								</div>
 								<div id='new-quote' className='text-right'>
 									<button onClick={getQuote} className='bg-blue-400 px-3 py-2 rounded-md text-white'>
