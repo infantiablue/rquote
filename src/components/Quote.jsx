@@ -27,7 +27,7 @@ function Quote({ quote, getQuote, loading }) {
 						<div id='quote-footer' className='flex justify-between mt-5'>
 							<div id='share' className='text-left'>
 								<button className='btn'>
-									<a id='tweet-quote' target='blank' href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text="${quote.content} - ${quote.author}"`}>
+									<a id='tweet-quote' target='blank' href={`https://twitter.com/intent/tweet?hashtags=quotes&text="${quote.content} - ${quote.author}" via @infantiablue`}>
 										<i className='fab fa-twitter'></i>
 									</a>
 								</button>
