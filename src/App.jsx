@@ -6,9 +6,9 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			bg: "",
-			photoAuthor: "",
-			photoLocation: "",
-			photoUrl: "",
+			photoAuthor: "Andreas Gücklhorn",
+			photoLocation: "Lake Brienz, Switzerland",
+			photoUrl: "https://unsplash.com/@draufsicht",
 			loading: true,
 			error: false,
 			quote: {},
@@ -79,19 +79,17 @@ class App extends React.Component {
 		return (
 			<div id='zen' className='container mx-auto subpixel-antialiased'>
 				<Quote quote={this.state.quote} getQuote={this.getQuote} loading={this.state.loading} />
-				{this.state.photoAuthor && (
-					<div id='photo-credits' className='flex justify-between px-12 text-white pt-24'>
-						<div id='photo-author' className='text-left'>
-							<p className='italic'>Credit</p>
-							<p>
-								<a href={this.state.photoUrl}>{this.state.photoAuthor}</a>
-							</p>
-						</div>
-						<div id='photo-location' className='text-right'>
-							<p>{this.state.photoLocation}</p>
-						</div>
+				<div id='photo-credits' className='flex justify-between px-12 text-white pt-24'>
+					<div id='photo-author' className='text-left'>
+						<p className='italic'>Credit</p>
+						<p>
+							<a href={this.state.photoUrl}>{this.state.photoAuthor}</a>
+						</p>
 					</div>
-				)}
+					<div id='photo-location' className='text-right'>
+						<p>{this.state.photoLocation}</p>
+					</div>
+				</div>
 			</div>
 		);
 	}
