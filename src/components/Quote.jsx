@@ -13,7 +13,7 @@ function Quote({ quote, getQuote, loading }) {
 
 	return (
 		<div className='flex justify-center'>
-			<div id='quote-box' className='p-6 bg-gray-100 rounded-lg'>
+			<div id='quote-box' className='p-6 bg-gray-100 shadow-md bg-opacity-50 rounded-lg'>
 				{loading ? (
 					<h2 className='animate__animated animate__flash animate__slow animate__infinite'>Loading</h2>
 				) : (
@@ -26,14 +26,14 @@ function Quote({ quote, getQuote, loading }) {
 						</div>
 						<div id='quote-footer' className='flex justify-between mt-5'>
 							<div id='share' className='text-left'>
-								<button className='bg-blue-400 px-3 py-2 rounded-md text-white'>
+								<button className='btn'>
 									<a id='tweet-quote' target='blank' href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text="${quote.content} - ${quote.author}"`}>
 										<i className='fab fa-twitter'></i>
 									</a>
 								</button>
 							</div>
 							<div>
-								<button onClick={toggleMusic} className='bg-blue-400 px-3 py-2 rounded-md text-white'>
+								<button onClick={toggleMusic} className='btn'>
 									{audioPlay ? <i className='fas fa-lg fa-pause' /> : <i className='fas fa-lg fa-play' />}
 								</button>
 								<audio loop>
@@ -41,7 +41,7 @@ function Quote({ quote, getQuote, loading }) {
 								</audio>
 							</div>
 							<div id='new-quote' className='text-right'>
-								<button onClick={getQuote} className='bg-blue-400 px-3 py-2 rounded-md text-white'>
+								<button onClick={getQuote} className='btn'>
 									<i className='fas fa-sync-alt'></i>
 								</button>
 							</div>

@@ -17,6 +17,10 @@
 	max-height: max-content;
 }
 
+#photo-credits {
+	height: fit-content;
+}
+
 #text {
 	font-family: "Benne", Georgia, serif;
 	&:before {
@@ -39,4 +43,8 @@
 
 #play-music:hover {
 	cursor: pointer;
+}
+
+.btn {
+	@apply bg-blue-600 px-3 py-2 rounded-md text-white hover:bg-yellow-300;
 }

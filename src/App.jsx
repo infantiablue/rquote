@@ -48,7 +48,7 @@ class App extends React.Component {
 		});
 	}
 	getBg() {
-		const CLIENT_ID = "vqB0rEMq_DTvsbn0DNypYL7Gd5mxK93hN-hugxOkGiU";
+		const CLIENT_ID = "8jnntJCl884l1hEMSLnI4guBKvdmp4hjytTAD20GNfs";
 		let search_query = "nature";
 		let vm = this;
 		fetch(`https://api.unsplash.com/photos/random/?client_id=${CLIENT_ID}&query=${search_query}&orientation=landscape`)
@@ -80,14 +80,14 @@ class App extends React.Component {
 			<div id='zen' className='container mx-auto subpixel-antialiased'>
 				<Quote quote={this.state.quote} getQuote={this.getQuote} loading={this.state.loading} />
 				{this.state.photoAuthor && (
-					<div className='flex justify-between  text-white pt-20'>
-						<div id='photo-author'>
+					<div id='photo-credits' className='flex justify-between px-12 text-white pt-24'>
+						<div id='photo-author' className='text-left'>
 							<p className='italic'>Credit</p>
 							<p>
-								<a href='{this.state.photoUrl}'>{this.state.photoAuthor}</a>
+								<a href={this.state.photoUrl}>{this.state.photoAuthor}</a>
 							</p>
 						</div>
-						<div id='photo-location'>
+						<div id='photo-location' className='text-right'>
 							<p>{this.state.photoLocation}</p>
 						</div>
 					</div>
